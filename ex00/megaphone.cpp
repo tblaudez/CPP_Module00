@@ -3,30 +3,40 @@
 /*                                                        ::::::::            */
 /*   megaphone.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tblaudez <marvin@codam.nl>                   +#+                     */
+/*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 14:19:04 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/17 17:12:58 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/06 12:28:52 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include <iostream> // cout
+#include <cctype> // touper
+
 
 int main(int argc, char const *argv[]) {
-	std::string sentence = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	
+
+	std::string	str;
+
 	if (argc > 1) {
-		sentence = argv[1];
-		for (int i = 2; i<argc; i++) {
-			sentence += argv[i];
+
+		// Concatenate argv into a string
+		str = argv[1];
+		for (int i=2; i<argc; i++) {
+			str += argv[i];
 		}
-		for (std::string::iterator it = sentence.begin(); it != sentence.end(); it++) {
+
+		// Using an iterator, apply toupper to every character
+		for (std::string::iterator it=str.begin(); it!=str.end(); it++) {
 			*it = toupper(*it);
 		}
+
+	}
+	else {
+		str = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	}
 
-	std::cout << sentence << std::endl;
+	std::cout << str << std::endl;
 
 	return 0;
 }

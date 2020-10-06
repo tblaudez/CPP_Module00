@@ -1,31 +1,30 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: tblaudez <tblaudez@student.42.fr>            +#+                      #
-#                                                    +#+                       #
-#    Created: 2020/09/17 14:41:30 by tblaudez      #+#    #+#                  #
-#    Updated: 2020/09/17 16:38:24 by tblaudez      ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
+# ************************************************************************** #
+#                                                                            #
+#                                                        ::::::::            #
+#   Makefile                                           :+:    :+:            #
+#                                                     +:+                    #
+#   By: tblaudez <tblaudez@student.codam.nl>         +#+                     #
+#                                                   +#+                      #
+#   Created: 2020/09/17 14:41:30 by tblaudez      #+#    #+#                 #
+#   Updated: 2020/10/06 12:32:01 by tblaudez      ########   odam.nl         #
+#                                                                            #
+# ************************************************************************** #
 
 NAME=megaphone
 
-SRC= src/megaphone.cpp
+SRC= megaphone.cpp
 OBJ= $(SRC:%.cpp=%.o)
-INCLUDE_DIR = -I includes/
 
 CC= /usr/bin/clang++
-CFLAGS= -Wall -Werror -Wextra
+CFLAGS= -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(INCLUDE_DIR) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) $(INCLUDE_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
@@ -37,6 +36,6 @@ re: fclean all
 
 run: all
 	./$(NAME)
-	./$(NAME) "Hello There"
+	./$(NAME) "Hello There" " - " "General Kenobi"
 
 .PHONY: all clean fclean re run
