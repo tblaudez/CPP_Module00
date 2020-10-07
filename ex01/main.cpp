@@ -6,18 +6,18 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 16:33:40 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/10/06 14:44:33 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 10:18:19 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
 
-#include <iostream>
+#include <iostream> // cout
 
 
-int main(void)
-{
+int main(void) {
+
 	Phonebook	phonebook;
 	std::string	input;
 

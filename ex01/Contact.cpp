@@ -6,12 +6,12 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 16:20:57 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/10/06 14:35:43 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 10:11:20 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
+#include <iostream> // cout
 
 Contact::Contact()  {
 
